@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define _CRT_SECURE_NO_WARNINGS
-#define lenght 10
-
+#define lenght 100
+#define countofSub 20
 int main() {
 
 	char arr[lenght], ch;//массив char'ов
@@ -18,36 +18,55 @@ int main() {
 		arr[i++] = ch;
 	}
 	
-	bool checkerM{ false };
-	bool checkerO{ false };
-	bool checkerS{ false };
-	bool checkerK{ false };
-	bool checkerA{ false };
-	bool checkerL{ false };
-	bool checkerE{ false };
-	bool checkerV{ false };
+	
+
+	char subarr[countofSub] , ch2;
+	printf("Vedite subname:\n");
+	int count = 0;
+	while (1) {
+		ch2 = getchar();
+		if (ch2 == '\n')
+			break;
+		if (count >= lenght) {
+			printf("ERROR: Vi vveli mnogo simvolov\n");
+			break;
+		}
+		arr[count++] = ch2;
+	}
+
+
+	int checkerM = 0;
+	int checkerO = 0;
+	int checkerS = 0;
+	int checkerK = 0;
+	int checkerA = 0;
+	int checkerL = 0;
+	int checkerE = 0;
+	int checkerV = 0;
 	//Москалев Moscalev
 
 	for (int count = 0; arr[count] != '\0'; count++) {
-		if (arr[count] == 'M')
-			checkerM = true;
-		else if (arr[count] == 'O')
-			checkerO = true;
-		else if (arr[count] == 'S')
-			checkerS = true;
-		else if (arr[count] == 'K')
-			checkerK = true;
-		else if (arr[count] == 'A')
-			checkerA = true;
-		else if (arr[count] == 'L')
-			checkerL = true;
-		else if (arr[count] == 'E')
-			checkerE = true;
-		else if (arr[count] == 'V')
-			checkerV = true;
+		for (int COUNT = 0; subarr[COUNT] != '\0'; COUNT++) {
+				if (arr[count] == 'M' || arr[count] == 'm')
+					checkerM++;
+				else if (arr[count] == 'O' || arr[count] == 'o')
+					checkerO++;
+				else if (arr[count] == 'S' || arr[count] == 's')
+					checkerS++;
+				else if (arr[count] == 'K' || arr[count] == 'k')
+					checkerK++;
+				else if (arr[count] == 'A' || arr[count] == 'a')
+					checkerA++;
+				else if (arr[count] == 'L' || arr[count] == 'l')
+					checkerL++;
+				else if (arr[count] == 'E' || arr[count] == 'e')
+					checkerE++;
+				else if (arr[count] == 'V' || arr[count] == 'v')
+					checkerV++;
+		}
 	}
 
-	if (checkerM and checkerO and checkerS and checkerK and checkerA and checkerL and checkerE and checkerV)
+	if ((checkerM >= 1) && (checkerO>=1) && (checkerS>=1) && (checkerK>=1) && (checkerA>=1) && (checkerL>=1) && (checkerE>=1) && (checkerV>=1))
 		printf("My secondame est' v stroke\n");
 	else
 		printf("My secondame net v stroke\n");
