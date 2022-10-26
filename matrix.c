@@ -97,14 +97,19 @@ int main() {
 	
 	for (int count = 0; count < N; count++) {//копируем элементы matrixA в матрицу B
 		for (int COUNT = 0; COUNT < M; COUNT++) {
-			if (maxIndex == count) {
-				continue;
-			}
-			else if (count < maxIndex) {
+			if (maxIndex == -1) {
 				matrixB[count][COUNT] = matrixA[count][COUNT];
 			}
-			else if (count > maxIndex) {
-				matrixB[count-1][COUNT] = matrixA[count][COUNT];
+			else {
+				if (maxIndex == count) {
+					continue;
+				}
+				else if (count < maxIndex) {
+					matrixB[count][COUNT] = matrixA[count][COUNT];
+				}
+				else if (count > maxIndex) {
+					matrixB[count-1][COUNT] = matrixA[count][COUNT];
+				}
 			}
 		}
 	}
