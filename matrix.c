@@ -12,7 +12,7 @@ int main() {
 	int N;
 	scanf_s("%d", &N);
 	if (N > 20 || N <= 0){
-		printf("ERROR: Вы ввели значение N больше максимального\n");
+		printf("ERROR: Вы ввели неправильное значение N\n");
 		exit(0);
 	}
 
@@ -20,7 +20,7 @@ int main() {
 	int M;
 	scanf_s("%d", &M);
 	if (M > 20 || M <= 0) {
-		printf("ERROR: Вы ввели значение M больше максимального\n");
+		printf("ERROR: Вы ввели неправильное значение M\n");
 		exit(0);
 	}
 
