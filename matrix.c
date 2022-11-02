@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
+//#include <stdbool.h>
 
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -11,32 +12,19 @@ int main() {
 	int f = 20;// максимальный размер матрицы
 
 	int N;
-
-	int temp = 1;
 	printf("Введите кол-во строк-N матрицы-A: ");
-	while (temp)
-	{
-		scanf_s("%d", &N);
-		if (N > f || N <= 0) {
-			printf("ERROR: Вы ввели неправильное значение N \n");
-			return 0;
-		}
-		else
-			temp = 0;
+	scanf_s("%d", &N);
+	if (N > f || N <= 0) {
+		printf("ERROR: Вы ввели неправильное значение N \n");
+		return 0;
 	}
 
 	int M;
-	temp = 1;
 	printf("Введите кол-во столбцов-M матрицы-A: ");
-	while (temp)
-	{
-		scanf_s("%d", &M);
-		if (M > f || M <= 0) {
-			printf("ERROR: Вы ввели неправильное значение M \n");
-			return 0;
-		}
-		else
-			temp = 0;
+	scanf_s("%d", &M);
+	if (M > f || M <= 0) {
+		printf("ERROR: Вы ввели неправильное значение M \n");
+		return 0;
 	}
 
 	int** matrixA;
